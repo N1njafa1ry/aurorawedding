@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-page Site with Popups</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html"><img src="https://uploads.staticjw.com/kt/ktackenstrom/kennethtackenstromwhite002.png" alt="Logo"></a>
+    </div>
+    <div class="nav">
+        <button class="nav-btn" onclick="togglePopup('content1', this)" style="background-image: url('https://uploads.staticjw.com/kt/ktackenstrom/nav02.jpg');">BRÖLLOPET</button>
+        <div id="content1" class="popup-content">
+            <div class="column-container">
+                <div class="image-container">
+                    <img src="https://uploads.staticjw.com/ta/tackochlovsalen/kenneth003.jpg" alt="Bröllopet">
+                </div>
+                <div class="text-container">
+                    <h3>Bröllopet</h3>
+                    <p>Välkomna till vårt bröllop! Vi ser fram emot att fira denna speciella dag med er.</p>
+                    <h4>Datum och Tid</h4>
+                    <p>Vigseln äger rum den 19 april 2025. Ceremonin börjar kl. 14:00. Det kommer serveras brunch fram till 12:00.</p>
+                    <h4>Plats</h4>
+                    <p>Bröllopet äger rum på <a href="https://explorethenorth.se/our-lodges/lapland-view-lodge" target="_blank">Lapland View Lodge</a>.</p>
+                    <h4>Klädsel</h4>
+                    <p>Klädkod: Magi. Kom klädda i något magiskt och förtrollande!</p>
+                    <h4>Presenter</h4>
+                    <p>Vi önskar oss inga bröllopspresenter, men bidrag till vår bröllopsresa uppskattas.</p>
+                    <h4>Kontaktinformation</h4>
+                    <p>Vid frågor, vänligen kontakta oss på [telefonnummer] eller [e-postadress].</p>
+                </div>
+            </div>
+        </div>
+        <button class="nav-btn" onclick="togglePopup('content2', this)" style="background-image: url('https://uploads.staticjw.com/kt/ktackenstrom/nav03.jpg');">BOENDE</button>
+        <div id="content2" class="popup-content">
+            <div class="column-container">
+                <div class="text-container">
+                    <h3 style="text-align: center;">Boende</h3>
+                    <p>Vi bjuder alla gäster på boendet från 19 till 20 april på <a href="https://explorethenorth.se/our-lodges/lapland-view-lodge" target="_blank">Lapland View Lodge</a>. Njut av den fantastiska naturen och den magiska atmosfären.</p>
+                </div>
+            </div>
+        </div>
+        <button class="nav-btn" onclick="togglePopup('content3', this)" style="background-image: url('https://uploads.staticjw.com/kt/ktackenstrom/nav05.jpg');">PROGRAM</button>
+        <div id="content3" class="popup-content">
+            <div class="column-container">
+                <div class="text-container">
+                    <h3 style="text-align: center;">Program</h3>
+                    <p><ul>
+                        <li>12:00 - Brunch</li>
+                        <li>14:00 - Ceremoni</li>
+                        <li>15:00 - Fotografering</li>
+                        <li>17:00 - Mottagning</li>
+                        <li>19:00 - Middag</li>
+                        <li>21:00 - Fest</li>
+                    </ul></p>
+                </div>
+            </div>
+        </div>
+        <button class="nav-btn" onclick="togglePopup('content4', this)" style="background-image: url('https://uploads.staticjw.com/kt/ktackenstrom/nav04.jpg');">GALLERI</button>
+        <div id="content4" class="popup-content gallery-content">
+            <div class="gallery">
+                <a href="#" class="image-link" onclick="showImage(['https://uploads.staticjw.com/ta/tackochlovsalen/kenneth003.jpg', 'https://uploads.staticjw.com/ta/tackochlovsalen/img-0625.jpg'], 0); return false;">
+                    <img src="https://uploads.staticjw.com/ta/tackochlovsalen/kenneth003.jpg" alt="Image 1">
+                </a>
+                <a href="#" class="image-link" onclick="showImage(['https://uploads.staticjw.com/ta/tackochlovsalen/kenneth003.jpg', 'https://uploads.staticjw.com/ta/tackochlovsalen/img-0625.jpg'], 1); return false;">
+                    <img src="https://uploads.staticjw.com/ta/tackochlovsalen/img-0625.jpg" alt="Image 2">
+                </a>
+            </div>
+        </div>
+        
+        <!-- Modified Modal Section -->
+        <div id="imageModal" class="modal">
+            <span class="close cursor" onclick="closeImage()">&times;</span>
+            <div class="modal-content" id="modalSlides"></div>
+            <a class="prev" onclick="slideImage(-1)">&#10094;</a>
+            <a class="next" onclick="slideImage(1)">&#10095;</a>
+        </div>
+    </div>
+</body>
+</html>
